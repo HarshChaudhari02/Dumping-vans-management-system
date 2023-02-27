@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Dumping Vans - My Website{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Dumping Vans</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Van Number</th>
+              <th>Driver Name</th>
+              <th>Area</th>
+              <th>Timing</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for van in vans %}
+            <tr>
+              <td>{{ van.number }}</td>
+              <td>{{ van.driver }}</td>
+              <td>{{ van.area }}</td>
+              <td>{{ van.timing }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="3">No dumping vans found.</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}

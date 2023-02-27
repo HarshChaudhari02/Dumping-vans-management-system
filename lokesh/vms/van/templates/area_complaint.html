@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Complaint of Area - My Website{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Add Complaint of Area</h1>
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="area">Area:</label>
+            <select name="area" id="area" class="form-control">
+              {% for area in areas %}
+              <option value="{{ area.pk }}">{{ area.area_name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" rows="5" class="form-control"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

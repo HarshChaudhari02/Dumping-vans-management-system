@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Complaints - My Website{% endblock %}
+<style>
+  .btn-primary {
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+  }
+
+  .btn-primary:hover {
+    background-color: transparent;
+    border: none;
+    color: pink;
+  }
+
+  .btn-primary:hover img {
+    filter: grayscale(100%) contrast(200%);
+  }
+</style>
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <img src="https://www.i-sight.com/wp-content/uploads/2019/07/iStock-935061536-640x300.jpg" style="height: 300px;" class="card-img-top" alt="Employee image">
+        <div class="card-body">
+          <h5 class="card-title">Complaint of Employee</h5>
+          <p class="card-text">File a complaint about an employee.</p>
+          <a href="{% url 'employee_complaint' %}" class="btn btn-primary">File a complaint</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <img src="https://schools.aglasem.com/wp-content/uploads/2020/02/letter-of-complaint-aglasem-image-750x375.jpg" style="height: 300px;" class="card-img-top" alt="Area image">
+        <div class="card-body">
+          <h5 class="card-title">Complaint of Area</h5>
+          <p class="card-text">File a complaint about a specific area.</p>
+          <a href="{% url 'area_complaint' %}" class="btn btn-primary">File a complaint</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
